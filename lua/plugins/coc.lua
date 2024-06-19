@@ -38,8 +38,6 @@ return {
             -- Customize
             -- Ctrl+Alt+L: Format Document
             keyset('i', '<a-s-f>', '<Esc>:CocCommand editor.action.formatDocument<CR>i', { noremap = true, silent = true })
-            -- keyset('i', '<c-z>', '<Esc>:undo<CR>i', { noremap = true, silent = true })
-            -- keyset('i', '<c-s-z>', '<Esc>:redo<CR>i', { noremap = true, silent = true })
         end
     }
 }

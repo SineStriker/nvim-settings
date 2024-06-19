@@ -1,6 +1,7 @@
 local o = vim.o                 -- 全局选项
 local bo = vim.bo               -- 缓冲区选项
 local wo = vim.wo               -- 窗口选项
+local g = vim.g                 -- 全局选项 2
 
 -- 全局选项
 o.encoding = "utf-8"
@@ -23,3 +24,5 @@ o.splitbelow = true             -- 向下拆分窗口
 
 o.termguicolors = true          -- 真彩色支持
 
+-- 全局选项 2
+g.mapleader = ' '               -- 设置主键为空格
