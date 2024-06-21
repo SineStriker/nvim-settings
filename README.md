@@ -32,7 +32,13 @@ We have declared `lazy.nvim` in `lua/core/plug.lua`, so that we should run `Plug
 
 We place the manifest of all plugins that need installing in `lua/plugins`, `lazy.nvim` will automatically install them.
 
-#### 4. Install Completion Extensions
+#### 4. Post Initializations
+
+Change to the VSCode theme.
+
+```sh
+:colorscheme vscode
+```
 
 We install the completion extensions of `coc.nvim` by running `CocInstall`.
 

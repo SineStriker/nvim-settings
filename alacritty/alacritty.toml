@@ -1,0 +1,18 @@
+shell = "cmd"
+
+[window]
+dimensions = { columns = 120, lines = 30 }
+
+[font]
+size = 12
+normal = { family = "JetBrainsMono NFM", style = "Regular" }
+# normal = { family = "CaskaydiaMono NFM", style = "Regular" }
+
+[colors.primary]
+foreground = "#CCCCCC"
+background = "#0C0C0C"
+
+[keyboard]
+bindings = [
+    { key = "F11", action = "ToggleFullscreen" }
+]

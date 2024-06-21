@@ -35,6 +35,25 @@ return {
             -- Use <c-o> to trigger completion
             keyset("i", "<c-o>", "coc#refresh()", {silent = true, expr = true})
 
+            -- Highlight the symbol and its references on a CursorHold event(cursor is idle)
+            vim.api.nvim_create_augroup("CocGroup", {})
+            vim.api.nvim_create_autocmd("CursorHold", {
+                group = "CocGroup",
+                command = "silent call CocActionAsync('highlight')",
+                desc = "Highlight symbol under cursor on CursorHold"
+            })
+
+            -- Symbol renaming
+            keyset("n", "<leader>rn", "<Plug>(coc-rename)", {silent = true})
+
+            -- Update signature help on jump placeholder
+            vim.api.nvim_create_autocmd("User", {
+                group = "CocGroup",
+                pattern = "CocJumpPlaceholder",
+                command = "call CocActionAsync('showSignatureHelp')",
+                desc = "Update signature help on jump placeholder"
+            })
+
             -- Customize
             -- Ctrl+Alt+L: Format Document
             keyset('i', '<a-s-f>', '<Esc>:CocCommand editor.action.formatDocument<CR>i', { noremap = true, silent = true })
