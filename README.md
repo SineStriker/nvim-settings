@@ -18,7 +18,7 @@ git clone https://github.com/SineStriker/nvim-settings.git ~/.config/nvim
 
 https://github.com/junegunn/vim-plug
 
-Pull `vim-plug` script to the `autoload` directory.
+Pull `vim-plug` script to `~/.local/share/nvim/site/autoload`.
 
 #### 2. Install `lazy.nvim`
 
