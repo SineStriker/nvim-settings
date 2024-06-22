@@ -35,6 +35,19 @@ return {
             -- Use <c-o> to trigger completion
             keyset("i", "<c-o>", "coc#refresh()", {silent = true, expr = true})
 
+            -- Use K to show documentation in preview window
+            -- function _G.show_docs()
+            --     local cw = vim.fn.expand('<cword>')
+            --     if vim.fn.index({'vim', 'help'}, vim.bo.filetype) >= 0 then
+            --         vim.api.nvim_command('h ' .. cw)
+            --     elseif vim.api.nvim_eval('coc#rpc#ready()') then
+            --         vim.fn.CocActionAsync('doHover')
+            --     else
+            --         vim.api.nvim_command('!' .. vim.o.keywordprg .. ' ' .. cw)
+            --     end
+            -- end
+            -- keyset("n", "K", '<CMD>lua _G.show_docs()<CR>', {silent = true})
+
             -- Highlight the symbol and its references on a CursorHold event(cursor is idle)
             vim.api.nvim_create_augroup("CocGroup", {})
             vim.api.nvim_create_autocmd("CursorHold", {
@@ -57,6 +70,11 @@ return {
             -- Customize
             -- Ctrl+Alt+L: Format Document
             keyset('i', '<a-s-f>', '<Esc>:CocCommand editor.action.formatDocument<CR>i', { noremap = true, silent = true })
+            
+            -- Ctrl+K: Show documentation
+            keyset('i', '<c-k>', '<Esc>Ki', { noremap = true, silent = true })
+
+            -- vim.cmd("autocmd! CursorHoldI * norm :call CocAction('DiagnosticInfo')<cr>")
         end
     }
 }

@@ -8,7 +8,7 @@ return {
         config = function () 
             require("nvim-treesitter.configs").setup({
                 ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "html",
-                    "cpp", "cmake", "json", "xml", "markdown"
+                    "cpp", "cmake", "json", "xml", "markdown", "doxygen"
                 },
                 sync_install = false,
                 highlight = { enable = true },
@@ -42,15 +42,18 @@ return {
                     autocmd!
                     autocmd ColorScheme vscode hi @property                                     guifg=#DDBFFF
                     autocmd ColorScheme vscode hi @variable.parameter                           guifg=#CCCCCC
-                    autocmd ColorScheme vscode hi @type.builtin.cpp                             guifg=#569CD6
+                    autocmd ColorScheme vscode hi @type.builtin                                 guifg=#569CD6
 
                     autocmd ColorScheme vscode hi @lsp.typemod.method.virtual.cpp               gui=italic
-                    autocmd ColorScheme vscode hi @lsp.typemod.variable.fileScope.cpp           guifg=#6c95eb gui=bold
+                    autocmd ColorScheme vscode hi @lsp.typemod.variable.fileScope               guifg=#6c95eb gui=bold
                     autocmd ColorScheme vscode hi @lsp.typemod.variable.globalScope             guifg=#6c95eb
-                    autocmd ColorScheme vscode hi @lsp.type.macro.cpp                           guifg=#569cd6
+                    autocmd ColorScheme vscode hi @lsp.type.macro                               guifg=#569cd6
                     autocmd ColorScheme vscode hi @lsp.type.namespace.cpp                       guifg=#4EC9B0
                     autocmd ColorScheme vscode hi @lsp.type.comment.cpp                         guifg=#808066
-                    autocmd ColorScheme vscode hi @string.escape.cpp                            guifg=#FFD68F
+                    autocmd ColorScheme vscode hi @lsp.type.comment.c                           guifg=#808066
+
+                    autocmd ColorScheme vscode hi @string.escape                                guifg=#FFD68F
+                    autocmd ColorScheme vscode hi @keyword.directive                            guifg=#9A9A9A
 
                     autocmd ColorScheme vscode hi LspInlayHint                                  guifg=#969696 guibg=#2E2E2E
                     autocmd ColorScheme vscode hi CocInlayHint                                  guifg=#969696 guibg=#2E2E2E

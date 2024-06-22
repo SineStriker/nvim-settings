@@ -12,9 +12,6 @@ keyset('v', '<S-Tab>', '<gv', opt)
 -- Ctrl+S 保存
 keyset('i', '<c-s>', '<Esc>:w<CR>i', opt)
 
--- Ctrl+Q 关闭
-keyset('n', '<c-q>', ':q<CR>', opt)
-
 -- 撤销/重做
 -- local function safe_undo()
 --     local utree = vim.fn.undotree()

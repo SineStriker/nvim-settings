@@ -3,5 +3,6 @@
         "--header-insertion=never",
         "--clang-tidy",
         "--compile-commands-dir=${workspaceFolder}/build"
-    ]
+    ],
+    "diagnostic.refreshOnInsertMode": true
 }
