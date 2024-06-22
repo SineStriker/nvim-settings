@@ -445,7 +445,7 @@ return {
                     condition = function()
                         return conditions.buffer_matches({ buftype = { "terminal" } })
                     end,
-                    utils.surround({ "", "" }, "dark_red", {
+                    utils.surround({ "", "" }, "bright_bg", {
                         FileType,
                         Space,
                         TerminalName,

@@ -15,6 +15,7 @@ o.autoindent = true             -- 自动缩进
 
 o.wrap = false                  -- 禁止自动换行
 o.cursorline = true             -- 启用光标
+o.ignorecase = true             -- 搜索不区分大小写
 
 o.mouse = "a"                   -- 启用鼠标
 o.clipboard = "unnamedplus"     -- 启用系统剪贴板
