@@ -2,7 +2,33 @@ return {
     {
         'neoclide/coc.nvim',
         branch = 'release',
+        dependencies = {
+            "neovim/nvim-lspconfig",
+            "nvim-lua/lsp-status.nvim",
+        },
         config = function()
+            -- lspconfig
+            require('lspconfig').clangd.setup{}
+
+
+
+
+            -- lspstatus
+            local lsp_status = require('lsp-status')
+            -- completion_customize_lsp_label as used in completion-nvim
+            -- Optional: customize the kind labels used in identifying the current function.
+            -- g:completion_customize_lsp_label is a dict mapping from LSP symbol kind 
+            -- to the string you want to display as a label
+            -- lsp_status.config { kind_labels = vim.g.completion_customize_lsp_label }
+
+            -- Register the progress handler
+            lsp_status.register_progress()
+
+
+
+
+            -- coc
+
             -- https://github.com/neoclide/coc.nvim?tab=readme-ov-file#example-lua-configuration
 
             -- Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
