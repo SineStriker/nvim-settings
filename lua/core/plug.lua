@@ -11,8 +11,7 @@ vim.call('plug#end')
 local function plugin_exists(plugin_framework, plugin_name, add_path)
     local plugin_path = vim.fn.stdpath("data") .. "/" .. plugin_framework .. "/" .. plugin_name
     if (vim.uv or vim.loop).fs_stat(plugin_path) then
-        add_path = add_path or false
-        if (add_path) then
+        if (add_path or false) then
             vim.opt.rtp:prepend(plugin_path)
         end
         return true

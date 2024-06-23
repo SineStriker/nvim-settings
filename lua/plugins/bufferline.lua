@@ -12,6 +12,11 @@ return {
                 quit = true,  -- quit Neovim when last buffer is closed
             }
 
+            local close_handler = function(bufnum)
+                vim.cmd('BufDel ' .. bufnum)
+                vim.cmd('redrawtabline')
+            end
+
             require("bufferline").setup {
                 options = {
                     -- 左侧让出 nvim-tree 的位置
@@ -26,13 +31,8 @@ return {
                     },
 
                     -- 覆盖关闭命令，默认关闭会直接把窗口关了，但我们只需要把当前缓冲区关闭
-                    close_command = function(bufnum)
-                        vim.cmd('BufDel ' .. bufnum)
-                    end,
-                    
-                    right_mouse_command = function(bufnum)
-                        vim.cmd('BufDel ' .. bufnum)
-                    end,
+                    close_command = close_handler,
+                    right_mouse_command = close_handler
                 }
             }
 
