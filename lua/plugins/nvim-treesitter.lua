@@ -3,7 +3,8 @@ return {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
         dependencies = {
-            "nvim-treesitter/nvim-treesitter-context"
+            "nvim-treesitter/nvim-treesitter-context",
+            "p00f/nvim-ts-rainbow"
         },
         config = function () 
             require("nvim-treesitter.configs").setup({
@@ -19,6 +20,18 @@ return {
                     updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
                     persist_queries = false, -- Whether the query persists across vim sessions
                 },
+                rainbow = {
+                    enable = true,
+                    -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
+                    extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+                    max_file_lines = nil, -- Do not enable for files with more than n lines, int
+                    colors = {
+                        "#FFD700",
+                        "#DA70D6",
+                        "#179FFF"
+                    }, -- table of hex strings
+                    -- termcolors = {} -- table of colour name strings
+                }
             })
 
             require("treesitter-context").setup{
