@@ -40,7 +40,19 @@ return {
             local opt = { noremap = true, silent = true }
 
             -- Ctrl+Q 关闭
-            keyset('n', '<c-q>', ':BufDel<CR>', opt)
+            keyset('n', '<c-q>', ':quit<CR>', opt)
         end
+    },
+    {
+        "utilyre/barbecue.nvim",
+        name = "barbecue",
+        version = "*",
+        dependencies = {
+          "SmiteshP/nvim-navic",
+          "nvim-tree/nvim-web-devicons", -- optional dependency
+        },
+        opts = {
+          -- configurations go here
+        },
     }
 }

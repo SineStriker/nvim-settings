@@ -43,5 +43,5 @@ Change to the VSCode theme.
 We install the completion extensions of `coc.nvim` by running `CocInstall`.
 
 ```sh
-:CocInstall coc-json coc-xml coc-clangd coc-cmake
+:CocInstall coc-json coc-xml coc-clangd coc-cmake coc-snippets
 ```

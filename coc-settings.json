@@ -4,5 +4,6 @@
         "--clang-tidy",
         "--compile-commands-dir=${workspaceFolder}/build"
     ],
-    "diagnostic.refreshOnInsertMode": true
+    "diagnostic.refreshOnInsertMode": true,
+    "snippets.ultisnips.pythonPrompt": false
 }
