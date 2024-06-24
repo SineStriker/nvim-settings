@@ -9,7 +9,7 @@ return {
         config = function()
             require('bufdel').setup {
                 next = 'tabs',
-                quit = true,  -- quit Neovim when last buffer is closed
+                quit = false,  -- quit Neovim when last buffer is closed
             }
 
             local close_handler = function(bufnum)
